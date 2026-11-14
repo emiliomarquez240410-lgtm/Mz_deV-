@@ -1,0 +1,249 @@
+/* Variables de color para cambiar el tema fácilmente */
+:root {
+    --bg-dark: #0f111a;
+    --bg-card: #1a1d2d;
+    --accent: #ff3e55;       /* Color principal (rojo neón) */
+    --accent-hover: #e02e44;
+    --text-main: #f0f2f8;
+    --text-muted: #9aa0b8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* Navegación */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 5%;
+    background-color: rgba(15, 17, 26, 0.95);
+    border-bottom: 1px solid #262a40;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.2rem;
+    letter-spacing: 1.5px;
+    color: var(--accent);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+/* Portada (Hero) */
+.hero {
+    text-align: center;
+    padding: 5rem 1.5rem;
+    background: radial-gradient(circle at top, #1f243a 0%, var(--bg-dark) 75%);
+    border-bottom: 1px solid #262a40;
+}
+
+.badge {
+    display: inline-block;
+    background-color: rgba(255, 62, 85, 0.15);
+    color: var(--accent);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    border: 1px solid var(--accent);
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero p {
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    font-size: 1.1rem;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--accent);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+/* Contenedor principal y secciones */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+.section {
+    padding: 3rem 0;
+}
+
+.section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    border-left: 4px solid var(--accent);
+    padding-left: 0.8rem;
+}
+
+.section-desc {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+/* Cuadrícula de Videos Responsiva */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.video-card {
+    background-color: var(--bg-card);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #262a40;
+}
+
+/* Truco para que el iframe de YouTube mantenga proporción 16:9 */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-card h3 {
+    padding: 1rem 1.2rem 0.3rem 1.2rem;
+    font-size: 1.1rem;
+}
+
+.video-card p {
+    padding: 0 1.2rem 1.2rem 1.2rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Cuadrícula de Características */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.feature-card {
+    background-color: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid #262a40;
+}
+
+.feature-card h3 {
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Devlog */
+.devlog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+}
+
+.devlog-item {
+    background-color: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 3px solid var(--accent);
+}
+
+.devlog-item .date {
+    font-size: 0.8rem;
+    color: var(--accent);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.devlog-item h3 {
+    margin: 0.3rem 0;
+}
+
+.devlog-item p {
+    color: var(--text-muted);
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid #262a40;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}
+
+/* Ajustes para pantallas muy pequeñas */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+}
